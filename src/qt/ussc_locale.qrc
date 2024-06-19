@@ -1,0 +1,18 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="de">locale/ussc_de.qm</file>
+        <file alias="en">locale/ussc_en.qm</file>
+        <file alias="en_US">locale/ussc_en_US.qm</file>
+        <file alias="es">locale/ussc_es.qm</file>
+        <file alias="es_ES">locale/ussc_es_ES.qm</file>
+        <file alias="fr_FR">locale/ussc_fr_FR.qm</file>
+        <file alias="hr_HR">locale/ussc_hr_HR.qm</file>
+        <file alias="it">locale/ussc_it.qm</file>
+        <file alias="ko_KR">locale/ussc_ko_KR.qm</file>
+        <file alias="nl">locale/ussc_nl.qm</file>
+        <file alias="pl">locale/ussc_pl.qm</file>
+        <file alias="ru">locale/ussc_ru.qm</file>
+        <file alias="tr">locale/ussc_tr.qm</file>
+        <file alias="zh_CN">locale/ussc_zh_CN.qm</file>
+    </qresource>
+</RCC>

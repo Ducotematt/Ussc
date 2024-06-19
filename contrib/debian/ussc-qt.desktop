@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=UssCoin 
+Comment=UssCoin P2P Cryptocurrency
+Comment[fr]=UssCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=UssCoin, eşten eşe kriptografik sanal para birimi
+Exec=ussc-qt %u
+Terminal=false
+Type=Application
+Icon=ussc128
+MimeType=x-scheme-handler/usscoin;
+Categories=Office;Finance;
+StartupWMClass=ussc-qt

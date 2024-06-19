@@ -1,0 +1,6 @@
+usr/local/bin/ussc-qt usr/bin
+share/pixmaps/ussc32.xpm usr/share/pixmaps
+share/pixmaps/ussc16.xpm usr/share/pixmaps
+share/pixmaps/ussc128.png usr/share/pixmaps
+debian/ussc-qt.desktop usr/share/applications
+debian/ussc-qt.protocol usr/share/kde4/services/

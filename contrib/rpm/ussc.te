@@ -1,0 +1,81 @@
+policy_module(ussc, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type ussc_t;
+type ussc_exec_t;
+init_daemon_domain(ussc_t, ussc_exec_t)
+
+permissive ussc_t;
+
+type ussc_initrc_exec_t;
+init_script_file(ussc_initrc_exec_t)
+
+type ussc_conf_t;
+files_type(ussc_conf_t)
+
+type ussc_var_lib_t;
+files_type(ussc_var_lib_t)
+
+type ussc_var_run_t;
+files_type(ussc_var_run_t)
+
+type ussc_port_t;
+corenet_port(ussc_port_t)
+
+########################################
+#
+# ussc local policy
+#
+allow ussc_t self:process { fork };
+
+allow ussc_t self:fifo_file rw_fifo_file_perms;
+allow ussc_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(ussc_t, ussc_conf_t, ussc_conf_t)
+manage_files_pattern(ussc_t, ussc_conf_t, ussc_conf_t)
+
+manage_dirs_pattern(ussc_t, ussc_var_lib_t, ussc_var_lib_t)
+manage_files_pattern(ussc_t, ussc_var_lib_t, ussc_var_lib_t)
+files_var_lib_filetrans(ussc_t, ussc_var_lib_t, { dir file })
+
+manage_dirs_pattern(ussc_t, ussc_var_run_t, ussc_var_run_t)
+manage_files_pattern(ussc_t, ussc_var_run_t, ussc_var_run_t)
+
+sysnet_dns_name_resolve(ussc_t)
+corenet_all_recvfrom_unlabeled(ussc_t)
+
+allow ussc_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(ussc_t)
+corenet_tcp_sendrecv_generic_node(ussc_t)
+corenet_tcp_sendrecv_all_ports(ussc_t)
+corenet_tcp_bind_generic_node(ussc_t)
+
+gen_require(`
+    type ussc_port_t;
+')
+allow ussc_t ussc_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type ussc_port_t;
+')
+allow ussc_t ussc_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(ussc_t)
+
+files_read_etc_files(ussc_t)
+
+miscfiles_read_localization(ussc_t)
+
+sysnet_dns_name_resolve(ussc_t)
+
+allow ussc_t ussc_exec_t:file execute_no_trans;
+allow ussc_t self:process setsched;
+corecmd_exec_ls(ussc_t)
+corenet_tcp_connect_http_port(ussc_t)
+dev_read_urand(ussc_t)
+fs_getattr_xattr_fs(ussc_t)
+kernel_read_system_state(ussc_t)

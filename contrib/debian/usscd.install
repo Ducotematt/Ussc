@@ -1,0 +1,3 @@
+usr/local/bin/usscd usr/bin
+usr/local/bin/ussc-cli usr/bin
+debian/examples/ussc.conf etc/ussc

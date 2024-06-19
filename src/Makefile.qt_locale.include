@@ -1,0 +1,15 @@
+QT_TS = \
+  qt/locale/ussc_de.ts \
+  qt/locale/ussc_en.ts \
+  qt/locale/ussc_en_US.ts \
+  qt/locale/ussc_es.ts \
+  qt/locale/ussc_es_ES.ts \
+  qt/locale/ussc_fr_FR.ts \
+  qt/locale/ussc_hr_HR.ts \
+  qt/locale/ussc_it.ts \
+  qt/locale/ussc_ko_KR.ts \
+  qt/locale/ussc_nl.ts \
+  qt/locale/ussc_pl.ts \
+  qt/locale/ussc_ru.ts \
+  qt/locale/ussc_tr.ts \
+  qt/locale/ussc_zh_CN.ts
